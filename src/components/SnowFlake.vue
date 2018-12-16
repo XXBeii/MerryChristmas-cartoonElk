@@ -3,6 +3,7 @@
 // 雪花轨迹优化
 // 内联keyframe实现
 // 背景图实现
+// canvas实现
 
 <template> 
   <div>

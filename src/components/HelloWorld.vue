@@ -91,24 +91,28 @@
             </div> -->
         </div>
         <div class="presents">
-            <div class="present present-one"></div>
-            <div class="present present-two"></div>
-            <div class="present present-two present-two-right"></div>
-            <div class="present present-three"></div>
+            <!-- 红色 -->
+            <Present class="present present-one" :size="45" boxColor="#fb5d5d" ribbonColor="transparent"/>
+            <Present class="present"/>
+            <Present class="present present-two-right"/>
+            <!-- 黄色 -->
+            <Present class="present present-three" :size="25" boxColor="#ffb63c" ribbonColor="#fb5353" />
         </div>
         <div class="snow"></div>
-        <SnowFlake count="50"/>
+        <SnowFlake count="50" />
     </div>
 </div>
 </template>
 
 <script>
 import SnowFlake from './SnowFlake.vue'
+import Present from './Present.vue'
 
 export default {
   name: 'HelloWorld',
   components: {
-    SnowFlake
+    SnowFlake,
+    Present
   },
   props: {
     msg: String
@@ -645,73 +649,20 @@ export default {
     width: 170px;
 }
 .present {
-    border-radius: 4px;
     bottom: 3px;
     position: absolute;
     z-index: 1;
 }
-.present:before,
-.present:after {
-    content: "";
-    display: block;
-    position: relative;
-}
-.present:before {
-    border-radius: 4px 4px 2px 2px;
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
-    right: 1px;
-}
 .present-one {
-    background-color: #fb5d5d;
-    height: 45px;
     right: 32px;
-    width: 45px;
     z-index: 2;
-}
-.present-one:before {
-    background-color: #fc7676;
-    height: 12px;
-    width: 47px;
-}
-.present-two {
-    background-color: #82dfe3;
-    height: 30px;
-    width: 30px;
-}
-.present-two:before {
-    background-color: #97e4e8;
-    height: 10px;
-    width: 32px;
-}
-.present-two:after {
-    background-color: #69b2cb;
-    bottom: 10px;
-    height: 100%;
-    left: 7px;
-    width: 5px;
 }
 .present-two-right {
     right: 5px;
 }
 .present-three {
-    background-color: #ffb63c;
-    height: 25px;
     left: 25px;
-    margin: auto;
-    width: 25px;
     z-index: 2;
-}
-.present-three:before {
-    background-color: #ffc056;
-    height: 8px;
-    width: 27px;
-}
-.present-three:after {
-    background-color: #fb5353;
-    bottom: 8px;
-    height: 100%;
-    left: 13px;
-    width: 5px;
 }
 .snowflake:nth-child(100) {
     -webkit-animation: snow-100 14s infinite;
