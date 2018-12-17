@@ -62,7 +62,7 @@ export default {
 <style scoped>
 .snowflake_ {
   /* background-color: #e4e4e4; */
-  background-color: red;
+  background-color: #f0f0f0;
   border-radius: 100%;
   height: 3px;
   position: absolute;
